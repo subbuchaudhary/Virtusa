@@ -1,14 +1,14 @@
 //
-//  VirtusaCodingTestUITests.swift
-//  VirtusaCodingTestUITests
+//  _0190417_SubbaNelakudhiti_NYCSchoolsUITests.swift
+//  20190417-SubbaNelakudhiti-NYCSchoolsUITests
 //
-//  Created by Subbu Chaudhary on 4/17/19.
+//  Created by Subbu Chaudhary on 4/18/19.
 //  Copyright © 2019 Subbu Chaudhary. All rights reserved.
 //
 
 import XCTest
 
-class VirtusaCodingTestUITests: XCTestCase {
+class _0190417_SubbaNelakudhiti_NYCSchoolsUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

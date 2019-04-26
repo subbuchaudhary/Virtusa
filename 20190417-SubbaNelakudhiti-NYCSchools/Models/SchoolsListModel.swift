@@ -10,4 +10,5 @@ import UIKit
 
 struct SchoolsListModel: Codable {
     let school_name : String
+    let dbn : String
 }
