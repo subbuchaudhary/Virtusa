@@ -27,15 +27,9 @@ class DetailsViewController: UIViewController {
             switch res {
                 case .success(let response):
                     DispatchQueue.main.async {
-                    if let object = response.first {
-                        self.readingScoreVal.text = object.sat_critical_reading_avg_score
-                        self.writingScoreVal.text = object.sat_writing_avg_score
-                        self.mathScoreVal.text = object.sat_math_avg_score
-                    } else {
-                        self.readingScoreVal.text = "No score Avalable"
-                        self.writingScoreVal.text = "No score Avalable"
-                        self.mathScoreVal.text = "No score Avalable"
-                    }
+                        self.readingScoreVal.text = (response.count > 0) ? response.first?.sat_critical_reading_avg_score : "--"
+                        self.mathScoreVal.text = (response.count > 0) ? response.first?.sat_math_avg_score : "--"
+                        self.writingScoreVal.text = (response.count > 0) ? response.first?.sat_writing_avg_score : "--"
                 }
             case .failure( _):
                 DispatchQueue.main.async {
