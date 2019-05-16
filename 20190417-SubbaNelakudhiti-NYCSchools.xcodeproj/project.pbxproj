@@ -19,6 +19,7 @@
 		D90ECC302268D02C00471767 /* ScoresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90ECC2E2268D02C00471767 /* ScoresModel.swift */; };
 		D90ECC322268D07200471767 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90ECC312268D07200471767 /* NetworkManager.swift */; };
 		D90ECC342268D5C500471767 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90ECC332268D5C500471767 /* DetailsViewController.swift */; };
+		D914408F228DBA720078A48E /* SchoolsListViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D914408E228DBA720078A48E /* SchoolsListViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D90ECC2E2268D02C00471767 /* ScoresModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresModel.swift; sourceTree = "<group>"; };
 		D90ECC312268D07200471767 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D90ECC332268D5C500471767 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D914408E228DBA720078A48E /* SchoolsListViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchoolsListViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		D90ECBF72268CF7400471767 /* 20190417-SubbaNelakudhiti-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				D914408D228DBA550078A48E /* Extensions */,
 				D90ECC2A2268CFD800471767 /* Models */,
 				D90ECC282268CFBF00471767 /* Utility */,
 				D90ECC272268CFAF00471767 /* Managers */,
@@ -170,6 +173,14 @@
 				D90ECC2E2268D02C00471767 /* ScoresModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D914408D228DBA550078A48E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D914408E228DBA720078A48E /* SchoolsListViewController+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D914408F228DBA720078A48E /* SchoolsListViewController+.swift in Sources */,
 				D90ECC322268D07200471767 /* NetworkManager.swift in Sources */,
 				D90ECBFB2268CF7400471767 /* SchoolsListViewController.swift in Sources */,
 				D90ECC2F2268D02C00471767 /* SchoolsListModel.swift in Sources */,

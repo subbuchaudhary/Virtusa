@@ -44,6 +44,7 @@
                                                 <constraint firstItem="pHE-Yi-dug" firstAttribute="top" secondItem="Pec-Lk-dhd" secondAttribute="top" constant="10" id="v6I-2j-spb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="schoolName" destination="pHE-Yi-dug" id="EHo-X1-bnX"/>
                                         </connections>

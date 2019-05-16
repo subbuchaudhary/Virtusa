@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SchoolsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SchoolsListViewController: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     var schoolsList : [SchoolsListModel] = []
@@ -18,38 +18,21 @@ class SchoolsListViewController: UIViewController, UITableViewDelegate, UITableV
         fetchSchools()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  (schoolsList.count > 0 ) ? schoolsList.count : 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:HighSchoolsCell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolsCell") as! HighSchoolsCell
-        let schoolObj = schoolsList[indexPath.row]
-        cell.schoolName?.text =  schoolObj.school_name
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let schoolmodel = self.schoolsList[indexPath.row]
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        vc.navigationItem.title = "Score Details"
-        vc.dbn = schoolmodel.dbn
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func fetchSchools() {
-        NetworkManager.sharedManger.fetchData(urlString: Constants.kSchoolsApi) { (res) in
-            switch res {
-            case .success(let response):
-                self.schoolsList = response
-                DispatchQueue.main.async {
-                    self.tblView.reloadData()
+        NetworkManager.sharedManger.fetchData(urlString: Constants.kSchoolsApi) { (result) in
+            if case .success(let response) = result {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.schoolsList = response
+                    DispatchQueue.main.async {
+                        self.tblView.reloadData()
+                    }
                 }
-            case .failure( _):
-                self.schoolsList.removeAll()
-                DispatchQueue.main.async {
-                    self.tblView.reloadData()
+            } else {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.schoolsList.removeAll()
+                    DispatchQueue.main.async {
+                        self.tblView.reloadData()
+                    }
                 }
             }
         }
