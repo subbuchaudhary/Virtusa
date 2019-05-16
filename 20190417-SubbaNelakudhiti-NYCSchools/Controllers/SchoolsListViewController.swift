@@ -12,9 +12,14 @@ class SchoolsListViewController: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     var schoolsList : [SchoolsListModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         fetchSchools()
     }
     
